@@ -500,8 +500,23 @@ section {
     overflow: hidden;
     margin-bottom: 1.5rem;
     background-color: #f5f5f5;
+    position: relative;
 }
 
+/* Support for direct images */
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* Gradient placeholders (current design) */
 .project-placeholder {
     width: 100%;
     height: 100%;
@@ -793,3 +808,27 @@ section {
 section {
     scroll-margin-top: 80px;
 }
+
+/* Optional: Image overlay style (if you want text over images) */
+/* Uncomment this section if using images with text overlays */
+/*
+.project-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 300;
+    transition: opacity 0.3s ease;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.project-card:hover .project-image-overlay {
+    opacity: 0;
+}
+*/

@@ -1,0 +1,7 @@
+# Block all web crawlers from indexing this site
+User-agent: *
+Disallow: /
+
+# This prevents search engines like Google, Bing, etc. from crawling your site
+# Your site will still be accessible to anyone with the direct link
+# But it won't appear in search engine results
