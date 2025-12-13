@@ -3,21 +3,29 @@ const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
 const closeMenu = document.querySelector('.close-menu');
 const mobileLinks = document.querySelectorAll('.mobile-menu a');
+const body = document.body;
 
 menuToggle.addEventListener('click', () => {
     mobileMenu.classList.add('active');
-    document.body.style.overflow = 'hidden';
+    body.style.overflow = 'hidden';
+    // Prevent background scrolling on mobile
+    body.style.position = 'fixed';
+    body.style.width = '100%';
 });
 
 closeMenu.addEventListener('click', () => {
     mobileMenu.classList.remove('active');
-    document.body.style.overflow = '';
+    body.style.overflow = '';
+    body.style.position = '';
+    body.style.width = '';
 });
 
 mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
         mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.width = '';
     });
 });
 
@@ -25,9 +33,23 @@ mobileLinks.forEach(link => {
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
         mobileMenu.classList.remove('active');
-        document.body.style.overflow = '';
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.width = '';
     }
 });
+
+// Prevent touch move when menu is open (mobile Safari fix)
+let touchStartY = 0;
+mobileMenu.addEventListener('touchstart', (e) => {
+    touchStartY = e.touches[0].clientY;
+}, { passive: true });
+
+mobileMenu.addEventListener('touchmove', (e) => {
+    if (mobileMenu.scrollHeight <= mobileMenu.clientHeight) {
+        e.preventDefault();
+    }
+}, { passive: false });
 
 // Smooth Scrolling for Navigation Links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -81,7 +103,19 @@ projectCards.forEach(card => {
         
         if (modal) {
             modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            // Prevent background scrolling on mobile
+            body.style.overflow = 'hidden';
+            body.style.position = 'fixed';
+            body.style.width = '100%';
+        }
+    });
+    
+    // Add keyboard accessibility
+    card.setAttribute('tabindex', '0');
+    card.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            card.click();
         }
     });
 });
@@ -92,7 +126,9 @@ modalCloses.forEach(close => {
         modals.forEach(modal => {
             modal.classList.remove('active');
         });
-        document.body.style.overflow = '';
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.width = '';
     });
 });
 
@@ -101,7 +137,9 @@ modals.forEach(modal => {
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.classList.remove('active');
-            document.body.style.overflow = '';
+            body.style.overflow = '';
+            body.style.position = '';
+            body.style.width = '';
         }
     });
 });
@@ -112,8 +150,20 @@ document.addEventListener('keydown', (e) => {
         modals.forEach(modal => {
             modal.classList.remove('active');
         });
-        document.body.style.overflow = '';
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.width = '';
     }
+});
+
+// Prevent modal background scrolling on mobile
+modals.forEach(modal => {
+    modal.addEventListener('touchmove', (e) => {
+        // Only prevent if touching the backdrop
+        if (e.target === modal) {
+            e.preventDefault();
+        }
+    }, { passive: false });
 });
 
 // Scroll Animations
@@ -168,16 +218,6 @@ function setActiveNavLink() {
 }
 
 window.addEventListener('scroll', setActiveNavLink);
-
-// Parallax Effect for Hero Section (subtle)
-const hero = document.querySelector('.hero');
-if (hero) {
-    window.addEventListener('scroll', () => {
-        const scrolled = window.pageYOffset;
-        const parallax = scrolled * 0.5;
-        hero.style.transform = `translateY(${parallax}px)`;
-    });
-}
 
 // Add smooth appearance to elements on page load
 window.addEventListener('load', () => {
@@ -275,8 +315,10 @@ cursor.style.cssText = `
 
 document.body.appendChild(cursor);
 
-// Only show custom cursor on desktop
-if (window.innerWidth > 768) {
+// Only show custom cursor on desktop (not on touch devices)
+const isTouchDevice = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+
+if (window.innerWidth > 768 && !isTouchDevice) {
     cursor.style.display = 'block';
     
     document.addEventListener('mousemove', (e) => {
@@ -298,6 +340,82 @@ if (window.innerWidth > 768) {
         });
     });
 }
+
+// Disable parallax and scroll animations on mobile for better performance
+const isMobile = window.innerWidth <= 768 || isTouchDevice;
+
+if (!isMobile) {
+    // Parallax Effect for Hero Section (desktop only)
+    const hero = document.querySelector('.hero');
+    if (hero) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const parallax = scrolled * 0.5;
+            hero.style.transform = `translateY(${parallax}px)`;
+        });
+    }
+}
+
+// Optimize images for mobile
+if (isMobile) {
+    const images = document.querySelectorAll('.project-image img');
+    images.forEach(img => {
+        // Add loading="lazy" if not already present
+        if (!img.hasAttribute('loading')) {
+            img.setAttribute('loading', 'lazy');
+        }
+    });
+}
+
+// Handle orientation changes on mobile
+let lastOrientation = window.orientation || 0;
+window.addEventListener('orientationchange', () => {
+    // Close any open modals or menus on orientation change
+    if (mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        body.style.overflow = '';
+        body.style.position = '';
+        body.style.width = '';
+    }
+    
+    modals.forEach(modal => {
+        if (modal.classList.contains('active')) {
+            modal.classList.remove('active');
+            body.style.overflow = '';
+            body.style.position = '';
+            body.style.width = '';
+        }
+    });
+    
+    lastOrientation = window.orientation || 0;
+});
+
+// Generate random dots at grid intersections for hero grid pattern
+function generateGridDots() {
+    const container = document.getElementById('gridDots');
+    if (!container) return; // Exit if grid pattern not enabled
+    
+    const gridSize = window.innerWidth > 768 ? 50 : 30;
+    const numDots = 25; // Number of random dots
+    
+    for (let i = 0; i < numDots; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        
+        // Snap to grid
+        const x = Math.floor(Math.random() * (window.innerWidth / gridSize)) * gridSize;
+        const y = Math.floor(Math.random() * (window.innerHeight / gridSize)) * gridSize;
+        
+        dot.style.left = x + 'px';
+        dot.style.top = y + 'px';
+        dot.style.animationDelay = (1 + Math.random() * 2) + 's';
+        
+        container.appendChild(dot);
+    }
+}
+
+// Generate dots on page load
+window.addEventListener('load', generateGridDots);
 
 // Console Easter Egg
 console.log(`

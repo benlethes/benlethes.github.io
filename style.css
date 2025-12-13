@@ -16,9 +16,11 @@
     --transition-speed: 0.3s;
 }
 
+/* Mobile-first: Ensure touch-friendly sizes */
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape */
 }
 
 body {
@@ -29,6 +31,8 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
+    /* Prevent text selection issues on mobile */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Container */
@@ -113,6 +117,11 @@ body {
     border: none;
     cursor: pointer;
     padding: 0.5rem;
+    /* Mobile: Ensure minimum 44x44px touch target */
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-toggle span {
@@ -123,6 +132,10 @@ body {
 }
 
 @media (max-width: 768px) {
+    .nav-content {
+        padding: 1rem 1.5rem;
+    }
+    
     .nav-links {
         display: none;
     }
@@ -147,6 +160,9 @@ body {
     align-items: center;
     gap: 2rem;
     transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    /* Prevent scrolling when menu is open */
+    overflow-y: auto;
+    padding: 2rem;
 }
 
 .mobile-menu.active {
@@ -159,9 +175,15 @@ body {
     text-decoration: none;
     font-weight: 300;
     transition: opacity var(--transition-speed);
+    /* Mobile: Ensure touch-friendly spacing */
+    padding: 1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
 }
 
-.mobile-menu a:hover {
+.mobile-menu a:hover,
+.mobile-menu a:active {
     opacity: 0.6;
 }
 
@@ -175,6 +197,26 @@ body {
     cursor: pointer;
     color: var(--color-text);
     line-height: 1;
+    /* Mobile: Touch-friendly close button */
+    min-width: 44px;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 480px) {
+    .mobile-menu a {
+        font-size: 1.75rem;
+    }
+    
+    .close-menu {
+        top: 1.5rem;
+        right: 1.5rem;
+        font-size: 2.5rem;
+    }
 }
 
 /* Hero Section */
@@ -184,6 +226,121 @@ body {
     align-items: center;
     padding-top: 80px;
     position: relative;
+    overflow: hidden;
+}
+
+/* Grid Pattern Background Animation */
+.grid-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    animation: gridFadeIn 2s ease-out 0.5s forwards;
+}
+
+.grid-pattern {
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: center center;
+}
+
+/* Animated dots at grid intersections */
+.grid-dots {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dot {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 50%;
+    opacity: 0;
+    animation: dotFadeIn 0.5s ease-out forwards;
+}
+
+@keyframes gridFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes dotFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Highlight effect - some grid lines glow */
+.grid-highlight {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+.highlight-line {
+    position: absolute;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        rgba(0, 0, 0, 0.12) 50%, 
+        transparent 100%);
+    opacity: 0;
+    animation: highlightPulse 3s ease-in-out infinite;
+}
+
+.highlight-line.horizontal {
+    width: 100%;
+    height: 1px;
+}
+
+.highlight-line.vertical {
+    width: 1px;
+    height: 100%;
+}
+
+@keyframes highlightPulse {
+    0%, 100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/* Ensure content is above grid */
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+@media (max-width: 768px) {
+    .grid-pattern {
+        background-size: 30px 30px;
+    }
 }
 
 .hero-title {
@@ -193,6 +350,8 @@ body {
     letter-spacing: -0.03em;
     margin-bottom: 2rem;
     font-family: var(--font-heading);
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 0.8s forwards;
 }
 
 .hero-subtitle {
@@ -201,17 +360,27 @@ body {
     font-weight: 300;
     line-height: 1.6;
     max-width: 600px;
+    margin-bottom: 4rem;
+    opacity: 0;
+    animation: fadeInUp 1s ease-out 1.1s forwards;
 }
 
 .scroll-indicator {
     position: absolute;
-    bottom: 4rem;
-    left: 2rem;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 1rem;
     opacity: 0.6;
     animation: fadeInUp 1s ease-out 0.8s both;
+}
+
+@media (max-width: 768px) {
+    .scroll-indicator {
+        display: none; /* Hide on mobile to prevent overlap */
+    }
 }
 
 .scroll-indicator span {
@@ -488,10 +657,24 @@ section {
 .project-card {
     cursor: pointer;
     transition: transform var(--transition-speed);
+    /* Mobile: Better touch feedback */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.05);
 }
 
 .project-card:hover {
     transform: translateY(-8px);
+}
+
+/* Mobile: Reduce hover effect, add active state */
+@media (max-width: 768px) {
+    .project-card:hover {
+        transform: none;
+    }
+    
+    .project-card:active {
+        transform: scale(0.98);
+        opacity: 0.9;
+    }
 }
 
 .project-image {
@@ -572,6 +755,8 @@ section {
     z-index: 3000;
     overflow-y: auto;
     padding: 4rem 2rem;
+    /* Mobile: Better scrolling */
+    -webkit-overflow-scrolling: touch;
 }
 
 .modal.active {
@@ -587,11 +772,28 @@ section {
     padding: 4rem;
     position: relative;
     animation: modalSlideIn 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    /* Mobile: Ensure content is readable */
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 @media (max-width: 768px) {
+    .modal {
+        padding: 1rem;
+        align-items: flex-start;
+    }
+    
     .modal-content {
-        padding: 2rem;
+        padding: 2rem 1.5rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        max-height: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-content {
+        padding: 1.5rem 1rem;
     }
 }
 
@@ -766,11 +968,30 @@ section {
     letter-spacing: 0.05em;
     transition: all var(--transition-speed);
     border: 2px solid var(--color-text);
+    /* Mobile: Ensure minimum touch target */
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
     background-color: var(--color-bg);
     color: var(--color-text);
+}
+
+.btn-primary:active {
+    transform: scale(0.98);
+}
+
+/* Mobile: Larger touch target */
+@media (max-width: 768px) {
+    .btn-primary {
+        padding: 1.25rem 2rem;
+        width: 100%;
+        max-width: 280px;
+    }
 }
 
 /* Footer */
@@ -807,6 +1028,55 @@ section {
 /* Smooth scroll offset for fixed nav */
 section {
     scroll-margin-top: 80px;
+}
+
+/* Mobile device optimizations */
+@media (max-width: 480px) {
+    /* Smaller hero text on very small screens */
+    .hero-title {
+        font-size: 2.5rem;
+        line-height: 1.15;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+    
+    /* Better section spacing */
+    section {
+        padding: 3rem 0;
+        scroll-margin-top: 70px;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    /* Modal close button */
+    .modal-close {
+        top: 1rem;
+        right: 1rem;
+        font-size: 2rem;
+    }
+    
+    /* Contact section */
+    .contact-item a,
+    .contact-item span {
+        font-size: 1rem;
+    }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 6rem 0 4rem;
+    }
+    
+    .mobile-menu a {
+        font-size: 1.5rem;
+        padding: 0.75rem;
+    }
 }
 
 /* Optional: Image overlay style (if you want text over images) */
