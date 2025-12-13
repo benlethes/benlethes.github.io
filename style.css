@@ -345,19 +345,20 @@ body {
 
 .hero-title {
     font-size: clamp(3rem, 8vw, 6rem);
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.1;
     letter-spacing: -0.03em;
     margin-bottom: 2rem;
     font-family: var(--font-heading);
+    color: #1a1a1a;
     opacity: 0;
     animation: fadeInUp 1s ease-out 0.8s forwards;
 }
 
 .hero-subtitle {
     font-size: clamp(1.1rem, 2vw, 1.5rem);
-    color: var(--color-text-light);
-    font-weight: 300;
+    color: #444444;
+    font-weight: 400;
     line-height: 1.6;
     max-width: 600px;
     margin-bottom: 4rem;
@@ -367,13 +368,14 @@ body {
 
 .scroll-indicator {
     position: absolute;
-    bottom: 2rem;
+    bottom: 0.5rem;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     align-items: center;
     gap: 1rem;
-    opacity: 0.6;
+    opacity: 0.8;
+    color: #333333;
     animation: fadeInUp 1s ease-out 0.8s both;
 }
 
