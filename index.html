@@ -4,555 +4,546 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <meta name="googlebot" content="noindex, nofollow">
-    <title>Ben Seegatz - Data Scientist & Creative Technologist</title>
+    <title>Ben Seegatz — Data Scientist & Creative Technologist</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-content">
-            <a href="#home" class="logo">Ben Seegatz</a>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#work">Work</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact">Contact</a>
-            </div>
-            <button class="menu-toggle" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu">
-        <button class="close-menu" aria-label="Close menu">×</button>
-        <a href="#about">About</a>
-        <a href="#work">Work</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </div>
+<div id="scroll-progress"></div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <!-- Grid Pattern Background -->
-        <div class="grid-container">
-            <div class="grid-pattern"></div>
-            <div class="grid-dots" id="gridDots"></div>
-            <div class="grid-highlight">
-                <div class="highlight-line horizontal" style="top: 30%; animation-delay: 2s;"></div>
-                <div class="highlight-line horizontal" style="top: 70%; animation-delay: 2.5s;"></div>
-                <div class="highlight-line vertical" style="left: 40%; animation-delay: 3s;"></div>
-                <div class="highlight-line vertical" style="left: 60%; animation-delay: 3.5s;"></div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <h1 class="hero-title">
-                Data Scientist &<br>
-                Creative Technologist
-            </h1>
-            <p class="hero-subtitle">
-                Exploring the intersection of artificial intelligence,<br>
-                data visualization, and creative expression
-            </p>
-            <div class="scroll-indicator">
-                <span>Scroll to explore</span>
-                <div class="scroll-line"></div>
-            </div>
-        </div>
-    </section>
+<div class="shell">
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <div class="section-header">
-                <h2>About</h2>
-            </div>
-            
+    <!-- Top bar -->
+    <header class="topbar bg-about" id="topbar">
+        <span class="topbar-name" data-page="about">Ben Seegatz</span>
+    </header>
+
+    <!-- Pages -->
+    <main class="pages">
+
+        <!-- ABOUT (start page) -->
+        <div class="page page-about active" id="page-about">
             <div class="about-grid">
-                <div class="about-main">
-                    <p class="lead">
-                        I am a Data Scientist and Creative Technologist based in Vienna, 
-                        combining analytical approaches with artistic innovation.
+                <div class="about-left">
+                    <p class="page-label">About</p>
+                    <p class="about-lead">
+                        I am a Data Scientist, Creative Technologist, and Musician based in Vienna.
                     </p>
-                    <p>
-                        Currently pursuing a Master's in Data Science at the University of Vienna, 
-                        with a focus on machine learning, AI ethics, and data visualization. 
-                        My work explores critical questions about emerging technologies 
+                    <p class="about-body">
+                        Currently pursuing a Master's in Data Science at the University of Vienna,
+                        with a focus on machine learning, AI ethics, and data visualization.
+                        My work explores critical questions about emerging technologies
                         while developing projects that connect data, art, and society.
                     </p>
                 </div>
-                
-                <div class="about-details">
-                    <div class="detail-block">
-                        <h3>Education</h3>
-                        <div class="detail-item">
-                            <strong>MSc Data Science</strong>
-                            <span>University of Vienna (2024 - Present)</span>
-                            <p>Focus: Explainability for AI, Machine Learning, Data Visualization</p>
+
+                <div class="about-right">
+                    <div class="detail-group">
+                        <p class="detail-group-label">Education</p>
+                        <div class="detail-row">
+                            <p class="detail-row-title">MSc Data Science</p>
+                            <p class="detail-row-meta">University of Vienna &mdash; 2024 – Present</p>
+                            <p class="detail-row-desc">Focus: Explainability for AI, Machine Learning, Data Visualization<br>
+                            Thesis: A Lightweight Membership Inference Attack on Approximate Graph Unlearning</p>
                         </div>
-                        <div class="detail-item">
-                            <strong>BSc Business Informatics</strong>
-                            <span>WU Vienna (2020 - 2024)</span>
-                            <p>Thesis: Social Bots and Political Opinion Influence</p>
+                        <div class="detail-row">
+                            <p class="detail-row-title">BSc Business Informatics</p>
+                            <p class="detail-row-meta">WU Vienna &mdash; 2020 – 2024</p>
+                            <p class="detail-row-desc">Thesis: Social Bots and Political Opinion Influence</p>
                         </div>
-                        <div class="detail-item">
-                            <strong>BA Social & Economic Communication</strong>
-                            <span>University of Arts Berlin (2017 - 2020)</span>
-                            <p>Thesis: Exploring different Narratives of the End"</p>
+                        <div class="detail-row">
+                            <p class="detail-row-title">BA Social &amp; Economic Communication</p>
+                            <p class="detail-row-meta">University of Arts Berlin &mdash; 2017 – 2020</p>
+                            <p class="detail-row-desc">Thesis: Exploring different Narratives of the End</p>
                         </div>
                     </div>
 
-                    <div class="detail-block">
-                        <h3>Expertise</h3>
-                        <ul class="skills-list">
-                            <li>Machine Learning & AI</li>
-                            <li>Data Analysis & Visualization</li>
-                            <li>AI Ethics & Critical Technology Analysis</li>
-                            <li>Cybersecurity & Misinformation</li>
-                            <li>Creative Technology & Generative Art</li>
-                            <li>Music Performance & Production</li>
-                        </ul>
+                    <div class="detail-group">
+                        <p class="detail-group-label">Expertise</p>
+                        <div class="skills-grid">
+                            <span class="skill-item">Machine Learning &amp; AI</span>
+                            <span class="skill-item">Data Analysis &amp; Visualization</span>
+                            <span class="skill-item">AI Ethics &amp; Critical Technology</span>
+                            <span class="skill-item">Cybersecurity &amp; Misinformation</span>
+                            <span class="skill-item">Creative &amp; Generative Art</span>
+                            <span class="skill-item">Music Performance &amp; Production</span>
+                        </div>
                     </div>
 
-                    <div class="detail-block">
-                        <h3>Technical Skills</h3>
-                        <div class="tech-tags">
-                            <span>Python</span>
-                            <span>R</span>
-                            <span>JavaScript</span>
-                            <span>HTML</span>
-                            <span>PowerBI</span>
-                            <span>Tableau</span>
-                            <span>Adobe Suite</span>
+                    <div class="detail-group">
+                        <p class="detail-group-label">Technical Skills</p>
+                        <div class="tag-row">
+                            <span class="tag">Python</span>
+                            <span class="tag">R</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                            <span class="tag">HTML</span>
+                            <span class="tag">PowerBI</span>
+                            <span class="tag">Tableau</span>
+                            <span class="tag">Adobe Suite</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Work Experience Section -->
-    <section id="work" class="work">
-        <div class="container">
-            <div class="section-header">
-                <h2>Work Experience</h2>
-            </div>
-            
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-date">2019 - Present</div>
-                    <div class="timeline-content">
-                        <h3>Associate Data Scientist & Editorial Associate</h3>
-                        <h4>LOOPING GROUP / LOOPING ONE</h4>
-                        <p>Vienna, Austria / Berlin, Germany</p>
-                        <ul>
+        <!-- WORK -->
+        <div class="page page-work" id="page-work">
+            <p class="page-label">Work Experience</p>
+            <div class="work-list">
+
+                <div class="work-row">
+                    <div class="work-date">2019 – Present</div>
+                    <div>
+                        <p class="work-role">Associate Data Scientist &amp; Editorial Associate</p>
+                        <p class="work-org">Looping Group / Looping One</p>
+                        <p class="work-location">Berlin, Germany</p>
+                        <ul class="work-bullets">
                             <li>Data analysis, visualization, and research for client reports</li>
                             <li>Workshops on LLM data privacy, SEO, and data literacy for stakeholders</li>
                             <li>Research and writing about emerging technologies</li>
-                            <li>Crisis communication for BMW at IAA 2021 & 2023</li>
+                            <li>Crisis communication for BMW at IAA 2021 &amp; 2023</li>
                             <li>API implementation and network analysis algorithms</li>
                             <li>Campaign work for BMW, Telekom Electronic Beats, and others</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Aug - Dec 2022</div>
-                    <div class="timeline-content">
-                        <h3>German Teaching Assistant</h3>
-                        <h4>University of Richmond</h4>
-                        <p>Richmond, Virginia, USA</p>
-                        <ul>
+                <div class="work-row">
+                    <div class="work-date">Feb – Aug 2026</div>
+                    <div>
+                        <p class="work-role">Tutor — Human Computer Interaction</p>
+                        <p class="work-org">University of Vienna</p>
+                        <p class="work-location">Vienna, Austria</p>
+                        <ul class="work-bullets">
+                            <li>Teaching students the fundamentals of React Native development</li>
+                            <li>Grading assignments and providing structured feedback</li>
+                            <li>Answering student questions via the course forum</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="work-row">
+                    <div class="work-date">Aug – Dec 2022</div>
+                    <div>
+                        <p class="work-role">German Teaching Assistant</p>
+                        <p class="work-org">University of Richmond</p>
+                        <p class="work-location">Richmond, Virginia, USA</p>
+                        <ul class="work-bullets">
                             <li>Teaching mid-level German course</li>
                             <li>Developing lesson plans and educational materials</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Sep - Nov 2021</div>
-                    <div class="timeline-content">
-                        <h3>Assistant Director & Stage Manager</h3>
-                        <h4>University of Music & Performing Arts Vienna</h4>
-                        <p>Vienna, Austria</p>
-                        <ul>
+                <div class="work-row">
+                    <div class="work-date">Sep – Nov 2021</div>
+                    <div>
+                        <p class="work-role">Assistant Director &amp; Stage Manager</p>
+                        <p class="work-org">University of Music &amp; Performing Arts Vienna</p>
+                        <p class="work-location">Vienna, Austria</p>
+                        <ul class="work-bullets">
                             <li>"Das Schweigen" by Natalie Sarraute (Dir. Dávid Paška)</li>
                             <li>Coordinated rehearsals and supported artistic direction</li>
                         </ul>
                     </div>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-date">Nov 2018 - Jan 2019</div>
-                    <div class="timeline-content">
-                        <h3>Intern</h3>
-                        <h4>Goethe-Institut Berlin</h4>
-                        <p>Berlin, Germany</p>
-                        <ul>
+                <div class="work-row">
+                    <div class="work-date">Nov 2018 – Jan 2019</div>
+                    <div>
+                        <p class="work-role">Intern</p>
+                        <p class="work-org">Goethe-Institut Berlin</p>
+                        <p class="work-location">Berlin, Germany</p>
+                        <ul class="work-bullets">
                             <li>Information lectures for course participants</li>
                             <li>Event program organization</li>
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>Selected Projects</h2>
-            </div>
-            
+        <!-- PROJECTS -->
+        <div class="page page-projects" id="page-projects">
+            <p class="page-label">Selected Projects</p>
             <div class="projects-grid">
-                <!-- Project 1: StyleGAN2 Performance -->
-                <div class="project-card" data-project="stylegan">
-                    <div class="project-image">
-                        <img src="images/styleganPerformance.JPG" alt="StyleGAN2 Music Performance at EMIK 2022" loading="lazy">
+
+                <!-- Project 1: Lenya Gramß collaboration -->
+                <div class="project-card" data-modal="modal-lenya">
+                    <div class="project-img">
+                        <!-- Copy uploaded file to images/lenya.jpg in your project -->
+                        <img src="images/lenya.jpg" alt="Music & Theatre collaboration with Lenya Gramß" loading="lazy">
                     </div>
-                    <div class="project-info">
-                        <h3>StyleGAN2 Music Performance</h3>
-                        <p>EMIK 2022</p>
-                        <div class="project-tags">
-                            <span>Generative AI</span>
-                            <span>Music Performance</span>
-                            <span>TouchDesigner</span>
-                        </div>
+                    <span class="project-num">01</span>
+                    <p class="project-title">Music &amp; Theatre</p>
+                    <p class="project-subtitle">Duo with Lenya Gramß</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Piano</span>
+                        <span class="project-tag">Chanson</span>
+                        <span class="project-tag">Live Performance</span>
                     </div>
                 </div>
 
-                <!-- Project 2: Social Bots Research -->
-                <div class="project-card" data-project="bots">
-                    <div class="project-image">
-                        <img src="images/socialbots.png" alt="Social Bots and Elections Research - AI and Misinformation" loading="lazy">
+                <!-- Project 2: StyleGAN2 -->
+                <div class="project-card" data-modal="modal-stylegan">
+                    <div class="project-img">
+                        <img src="images/styleganPerformance.JPG" alt="StyleGAN2 Music Performance" loading="lazy">
                     </div>
-                    <div class="project-info">
-                        <h3>Social Bots & Elections</h3>
-                        <p>Bachelor Thesis</p>
-                        <div class="project-tags">
-                            <span>AI Ethics</span>
-                            <span>Misinformation</span>
-                            <span>Political Discourse</span>
-                        </div>
+                    <span class="project-num">02</span>
+                    <p class="project-title">StyleGAN2 Music Performance</p>
+                    <p class="project-subtitle">EMIK 2022</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Generative AI</span>
+                        <span class="project-tag">Music Performance</span>
+                        <span class="project-tag">TouchDesigner</span>
                     </div>
                 </div>
 
-                <!-- Project 3: Data Visualization Art -->
-                <div class="project-card" data-project="dataviz">
-                    <div class="project-image">
-                        <img src="images/arbitrary1.jpeg" alt="Arbitrary Relevance - Water Table Data Visualization Art" loading="lazy">
+                <!-- Project 3: Arbitrary Relevance -->
+                <div class="project-card" data-modal="modal-dataviz">
+                    <div class="project-img">
+                        <img src="images/arbitrary1.jpeg" alt="Arbitrary Relevance" loading="lazy">
                     </div>
-                    <div class="project-info">
-                        <h3>Arbitrary Relevance</h3>
-                        <p>LEER Studio Berlin, 2022</p>
-                        <div class="project-tags">
-                            <span>Data Visualization</span>
-                            <span>Environmental Data</span>
-                            <span>Generative Art</span>
-                        </div>
+                    <span class="project-num">03</span>
+                    <p class="project-title">Arbitrary Relevance</p>
+                    <p class="project-subtitle">LEER Studio Berlin, 2022</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Data Visualization</span>
+                        <span class="project-tag">Environmental Data</span>
+                        <span class="project-tag">Generative Art</span>
                     </div>
                 </div>
 
                 <!-- Project 4: Rebranding Alexanderplatz -->
-                <div class="project-card" data-project="alex">
-                    <div class="project-image">
-                        <img src="images/rebrandingA.jpg" alt="Rebranding Alexanderplatz Exhibition Design Project" loading="lazy">
+                <div class="project-card" data-modal="modal-alex">
+                    <div class="project-img">
+                        <img src="images/rebrandingA.jpg" alt="Rebranding Alexanderplatz" loading="lazy">
                     </div>
-                    <div class="project-info">
-                        <h3>Rebranding Alexanderplatz</h3>
-                        <p>University of Arts Berlin</p>
-                        <div class="project-tags">
-                            <span>Public Space</span>
-                            <span>Exhibition Design</span>
-                            <span>Urban Planning</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Project 5: Improvisation Performance -->
-                <div class="project-card" data-project="improv">
-                    <div class="project-image">
-                        <img src="images/improvisation.JPG" alt="Improvisation Performance with Merlin Rainer at EMIK 2022" loading="lazy">
-                    </div>
-                    <div class="project-info">
-                        <h3>Improvisation</h3>
-                        <p>EMIK 2022 w/ Merlin Rainer</p>
-                        <div class="project-tags">
-                            <span>Live Performance</span>
-                            <span>Audio-Visual</span>
-                            <span>Collaboration</span>
-                        </div>
+                    <span class="project-num">04</span>
+                    <p class="project-title">Rebranding Alexanderplatz</p>
+                    <p class="project-subtitle">University of Arts Berlin</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Public Space</span>
+                        <span class="project-tag">Exhibition Design</span>
+                        <span class="project-tag">Urban Planning</span>
                     </div>
                 </div>
 
-                <!-- Project 6: Theatre Production -->
-                <div class="project-card" data-project="theatre">
-                    <div class="project-image">
-                        <img src="images/theatre.jpeg" alt="The Silence - Theatre Production directed by Dávid Paška" loading="lazy">
+                <!-- Project 5: Improvisation -->
+                <div class="project-card" data-modal="modal-improv">
+                    <div class="project-img">
+                        <img src="images/improvisation.JPG" alt="Improvisation Performance" loading="lazy">
                     </div>
-                    <div class="project-info">
-                        <h3>The Silence</h3>
-                        <p>Natalie Sarraute | Dir. Dávid Paška</p>
-                        <div class="project-tags">
-                            <span>Theatre</span>
-                            <span>Stage Direction</span>
-                            <span>Körber Festival</span>
-                        </div>
+                    <span class="project-num">05</span>
+                    <p class="project-title">Improvisation</p>
+                    <p class="project-subtitle">EMIK 2022 w/ Merlin Rainer</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Live Performance</span>
+                        <span class="project-tag">Audio-Visual</span>
+                        <span class="project-tag">Collaboration</span>
                     </div>
                 </div>
+
+                <!-- Project 6: The Silence -->
+                <div class="project-card" data-modal="modal-theatre">
+                    <div class="project-img">
+                        <img src="images/theatre.jpeg" alt="The Silence" loading="lazy">
+                    </div>
+                    <span class="project-num">06</span>
+                    <p class="project-title">The Silence</p>
+                    <p class="project-subtitle">Natalie Sarraute | Dir. Dávid Paška</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Theatre</span>
+                        <span class="project-tag">Stage Direction</span>
+                        <span class="project-tag">Körber Festival</span>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </section>
 
-    <!-- Project Modals -->
-    <div class="modal" id="modal-stylegan">
-        <div class="modal-content">
-            <button class="modal-close">×</button>
-            <h2>StyleGAN2 Music Performance</h2>
-            <p class="modal-subtitle">EMIK 2022 - Culture.Room Exhibition Opening</p>
-            
-            <div class="modal-body">
-                <p>
-                    I had the privilege of performing the opening of the multidisciplinary exhibition 
-                    EMIK organized by the international artist network Culture.Room. In my performance, 
-                    I employed NVIDIA's StyleGAN2 to train a generative image model using the showcased 
-                    artworks.
-                </p>
-                <p>
-                    Using this model, I generated thousands of frames within the model space, eventually 
-                    compiling them into a video file. To make the video audio reactive, I used TouchDesigner 
-                    and synchronized it with various modern compositions from the 20th century that I 
-                    played on the piano.
-                </p>
-                
-                <h3>Technologies Used</h3>
-                <ul>
-                    <li>NVIDIA StyleGAN2 for generative image synthesis</li>
-                    <li>TouchDesigner for audio-reactive visuals</li>
-                    <li>Python for model training and frame generation</li>
-                    <li>Live piano performance of 20th century compositions</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal-bots">
-        <div class="modal-content">
-            <button class="modal-close">×</button>
-            <h2>Social Bots & Political Elections</h2>
-            <p class="modal-subtitle">Bachelor's Thesis - WU Vienna</p>
-            
-            <div class="modal-body">
-                <p>
-                    My bachelor's thesis explores how social bots influence opinions during elections, 
-                    discussing challenges in detecting bots on social media and highlighting their 
-                    consistent tactics across regions.
-                </p>
-                
-                <h3>Key Findings</h3>
-                <ul>
-                    <li>Detection methods face ongoing challenges due to evolving bot sophistication</li>
-                    <li>Bots employ amplification, manipulation of popularity indicators, and human mimicry</li>
-                    <li>Psychological effects include the Spiral of Silence and Illusory Truth Effect</li>
-                    <li>AI and LLMs pose increasing challenges for bot detection</li>
-                </ul>
-                
-                <h3>Research Gap</h3>
-                <p>
-                    The thesis identifies a need for more research establishing clearer connections 
-                    between social bot behavior and direct impact on political discourse, especially 
-                    given continuous advancements in AI technology.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal-dataviz">
-        <div class="modal-content">
-            <button class="modal-close">×</button>
-            <h2>Arbitrary Relevance</h2>
-            <p class="modal-subtitle">LEER Studio Berlin, August 2022</p>
-            
-            <div class="modal-body">
-                <p>
-                    A data visualization art project created for a spontaneous exhibition at LEER Studio Berlin. 
-                    The artworks visualize water table levels from 30 monitoring stations in the Berlin area.
-                </p>
-                
-                <h3>Concept</h3>
-                <p>
-                    Being familiar with the region where I grew up, I was concerned about the decreasing 
-                    water levels and sought to explore the artistic potential of environmental data.
-                </p>
-                
-                <h3>Process</h3>
-                <ul>
-                    <li>Scraped data from 30 water table monitoring stations</li>
-                    <li>Transformed values to grayscale (0-255 range)</li>
-                    <li>Generated two cotton prints: one showing unique values, another highlighting differences</li>
-                    <li>Exhibited alongside works by Livia Avianus, Rupert Buesst, Lilith Krauss, and Yan Stolze</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal-alex">
-        <div class="modal-content">
-            <button class="modal-close">×</button>
-            <h2>Rebranding Alexanderplatz</h2>
-            <p class="modal-subtitle">Final Project - University of Arts Berlin</p>
-            
-            <div class="modal-body">
-                <p>
-                    A conceptual framework for a temporary exhibition presenting the transformation 
-                    of Berlin's Alexanderplatz through colored pathways connecting historical, present, 
-                    and future architectural elements.
-                </p>
-                
-                <h3>The Framework</h3>
-                <ul>
-                    <li><strong>Blue Line:</strong> Historical Buildings</li>
-                    <li><strong>Turquoise Line:</strong> Present Buildings</li>
-                    <li><strong>Green Line:</strong> Future Buildings (including eight 130m towers)</li>
-                    <li><strong>Pink Line:</strong> Ways to participate in urban planning processes</li>
-                </ul>
-                
-                <h3>Implementation</h3>
-                <p>
-                    The design proposed using colored tape for flexibility and easy removal without 
-                    discoloration, creating an accessible and informative public exhibition about 
-                    urban development and civic participation.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal-improv">
-        <div class="modal-content">
-            <button class="modal-close">×</button>
-            <h2>Improvisation with Merlin Rainer</h2>
-            <p class="modal-subtitle">EMIK 2022 Performance</p>
-            
-            <div class="modal-body">
-                <p>
-                    A collaborative improvisational performance combining visual art, sound, 
-                    and live music in real-time dialogue.
-                </p>
-                
-                <h3>Performance Setup</h3>
-                <p>
-                    Merlin Rainer utilized a canvas with heavy paper and a microphone, making 
-                    the brushstrokes audible. The painting process was live-streamed onto a wall, 
-                    creating a visual and sonic interplay.
-                </p>
-                
-                <h3>Musical Approach</h3>
-                <ul>
-                    <li>Piano improvisation inspired by György Ligeti's Études pour piano</li>
-                    <li>Original compositions responding to visual brushwork</li>
-                    <li>Percussive elements created by audible brush strokes</li>
-                    <li>Dynamic dialogue between piano and visual art</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal" id="modal-theatre">
-        <div class="modal-content">
-            <button class="modal-close">×</button>
-            <h2>The Silence</h2>
-            <p class="modal-subtitle">Natalie Sarraute | Directed by Dávid Paška</p>
-            
-            <div class="modal-body">
-                <p>
-                    A theatre production exploring the power of silence and what lies beneath 
-                    conventional conversation. Selected for the prestigious Körber Festival Junge 
-                    Regie in Hamburg (June 2022).
-                </p>
-                
-                <h3>The Play</h3>
-                <p>
-                    Jean Pierre remains silent. What initially appears to be a peculiar quirk 
-                    develops an unexpectedly profound impact on society, challenging conversation 
-                    norms and compelling others to reveal more about themselves than they intend.
-                </p>
-                
-                <h3>My Role as Director's Assistant</h3>
-                <ul>
-                    <li>Participated in every production phase from script to stage design</li>
-                    <li>Coordinated rehearsals and managed stage operations</li>
-                    <li>Supported artistic direction and conceptual development</li>
-                </ul>
-                
-                <h3>Contemporary Relevance</h3>
-                <p>
-                    The production served as a critique of our era of content devoid of substance, 
-                    where discourse remains inseparable from class thinking and ideological positioning.
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2>Get in Touch</h2>
-            </div>
-            
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Let's collaborate</h3>
-                    <p>
-                        I am always interested in new opportunities involving data science, 
+        <!-- CONTACT -->
+        <div class="page page-contact" id="page-contact">
+            <div class="contact-layout">
+                <div>
+                    <p class="page-label">Contact</p>
+                    <h2 class="contact-heading">Let's collaborate</h2>
+                    <p class="contact-intro">
+                        I am always interested in new opportunities involving data science,
                         AI ethics, and creative technology.
                     </p>
-                    
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <strong>Email</strong>
-                            <a href="mailto:ben.seegatz@live.de">ben.seegatz@live.de</a>
-                        </div>
-                        <div class="contact-item">
-                            <strong>Location</strong>
-                            <span>Vienna, Austria</span>
-                        </div>
-                        <div class="contact-item">
-                            <strong>LinkedIn</strong>
-                            <a href="https://linkedin.com/in/ben-seegatz" target="_blank" rel="noopener">linkedin.com/in/ben-seegatz</a>
-                        </div>
-                    </div>
+                    <ul class="contact-list">
+                        <li class="contact-list-item">
+                            <span class="contact-list-key">Email</span>
+                            <span class="contact-list-val">
+                                <a href="mailto:ben.seegatz@live.de">ben (dot) seegatz (at) live (dot) de</a>
+                            </span>
+                        </li>
+                        <li class="contact-list-item">
+                            <span class="contact-list-key">Location</span>
+                            <span class="contact-list-val">Vienna, Austria</span>
+                        </li>
+                        <li class="contact-list-item">
+                            <span class="contact-list-key">LinkedIn</span>
+                            <span class="contact-list-val">
+                                <a href="https://linkedin.com/in/ben-seegatz" target="_blank" rel="noopener">
+                                    linkedin.com/in/ben-seegatz
+                                </a>
+                            </span>
+                        </li>
+                    </ul>
                 </div>
-                
-                <div class="contact-cta">
-                    <div class="download-cv">
-                        <h4>Download CV</h4>
-                        <p>Full resume with detailed project history and references</p>
-                        <a href="BenSeegatz_CV.pdf" class="btn-primary" download>Download PDF</a>
+
+                <div>
+                    <div class="cv-block">
+                        <div class="cv-block-inner">
+                            <p class="cv-block-label">Curriculum Vitae</p>
+                            <p class="cv-block-title">Ben Seegatz</p>
+                            <p class="cv-block-text">Full resume with detailed project history, references, and language proficiencies.</p>
+                            <a href="BenSeegatz_CV.pdf" class="cv-btn" download>Download PDF</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>&copy; 2025 Ben Seegatz. All rights reserved.</p>
-                <p class="footer-note">
-                    Data Scientist × Creative Technologist × Musician
-                </p>
-            </div>
+    </main>
+
+    <!-- Right sidebar nav — 4 items, no Home -->
+    <nav class="sidenav bg-about" id="sidenav">
+        <button class="sidenav-item active" data-page="about">
+            <span class="sidenav-num">01</span>
+            <span class="sidenav-label">About</span>
+        </button>
+        <button class="sidenav-item" data-page="work">
+            <span class="sidenav-num">02</span>
+            <span class="sidenav-label">Work</span>
+        </button>
+        <button class="sidenav-item" data-page="projects">
+            <span class="sidenav-num">03</span>
+            <span class="sidenav-label">Projects</span>
+        </button>
+        <button class="sidenav-item" data-page="contact">
+            <span class="sidenav-num">04</span>
+            <span class="sidenav-label">Contact</span>
+        </button>
+        <span class="sidenav-counter" id="page-counter">1 / 4</span>
+    </nav>
+
+    <!-- Mobile bottom nav -->
+    <nav class="mobile-nav" id="mobile-nav">
+        <button class="mobile-nav-item active" data-page="about">
+            <span class="mobile-nav-dot"></span>
+            <span class="mobile-nav-label">About</span>
+        </button>
+        <button class="mobile-nav-item" data-page="work">
+            <span class="mobile-nav-dot"></span>
+            <span class="mobile-nav-label">Work</span>
+        </button>
+        <button class="mobile-nav-item" data-page="projects">
+            <span class="mobile-nav-dot"></span>
+            <span class="mobile-nav-label">Projects</span>
+        </button>
+        <button class="mobile-nav-item" data-page="contact">
+            <span class="mobile-nav-dot"></span>
+            <span class="mobile-nav-label">Contact</span>
+        </button>
+    </nav>
+
+</div>
+
+<!-- MODALS -->
+
+<div class="modal" id="modal-lenya">
+    <div class="modal-box">
+        <button class="modal-close">×</button>
+        <h2 class="modal-title">Music &amp; Theatre — Duo with Lenya Gramß</h2>
+        <p class="modal-sub">Piano &amp; Chanson Performance, 2023 – Present</p>
+        <div class="modal-body">
+            <p>An ongoing artistic collaboration with actress and singer Lenya Gramß, combining chamber music with theotrical performances.</p>
+            <h3>Awards</h3>
+            <ul>
+                <li>Bundesgesangswettbewerb 2023 — Sonderpreis für Pianisten (Ben Seegatz); 1st prize (Lenya Gramß)</li>
+                <li>32. Rock- &amp; Chanson-Festival "Köln-Breslau-Paris" 2024 — 1st prize, Nachwuchswettbewerb</li>
+            </ul>
+            <h3>Selected Venues</h3>
+            <ul>
+                <li>Max Reinhardt Seminar, Vienna</li>
+                <li>Theater Drachengasse, Vienna</li>
+                <li>Kiel Opera, Kiel</li>
+                <li>Stage Theater des Westens, Berlin</li>
+            </ul>
         </div>
-    </footer>
+    </div>
+</div>
 
-    <script src="script.js"></script>
+<div class="modal" id="modal-stylegan">
+    <div class="modal-box">
+        <button class="modal-close">×</button>
+        <h2 class="modal-title">StyleGAN2 Music Performance</h2>
+        <p class="modal-sub">EMIK 2022 — Culture.Room Exhibition Opening</p>
+        <div class="modal-body">
+            <p>I performed the opening of the multidisciplinary EMIK exhibition organized by the artist network Culture.Room. Using NVIDIA's StyleGAN2, I trained a generative image model on the showcased artworks, generated thousands of frames, and made the resulting video audio-reactive via TouchDesigner — synchronized with 20th century compositions I played live on piano.</p>
+            <h3>Technologies</h3>
+            <ul>
+                <li>NVIDIA StyleGAN2 for generative image synthesis</li>
+                <li>TouchDesigner for audio-reactive visuals</li>
+                <li>Python for model training and frame generation</li>
+                <li>Live piano performance of 20th century compositions</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal-dataviz">
+    <div class="modal-box">
+        <button class="modal-close">×</button>
+        <h2 class="modal-title">Arbitrary Relevance</h2>
+        <p class="modal-sub">LEER Studio Berlin, August 2022</p>
+        <div class="modal-body">
+            <p>A data visualization art project visualizing water table levels from 30 monitoring stations in the Berlin area, created for a spontaneous exhibition at LEER Studio Berlin.</p>
+            <h3>Process</h3>
+            <ul>
+                <li>Scraped data from 30 water table monitoring stations</li>
+                <li>Transformed values to grayscale (0–255 range)</li>
+                <li>Generated two cotton prints: unique values and level differences</li>
+                <li>Exhibited alongside works by Livia Avianus, Rupert Buesst, Lilith Krauss, and Yan Stolze</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal-alex">
+    <div class="modal-box">
+        <button class="modal-close">×</button>
+        <h2 class="modal-title">Rebranding Alexanderplatz</h2>
+        <p class="modal-sub">Final Project — University of Arts Berlin</p>
+        <div class="modal-body">
+            <p>A conceptual framework for a temporary exhibition presenting the transformation of Berlin's Alexanderplatz through colored pathways connecting historical, present, and future architectural elements.</p>
+            <h3>The Framework</h3>
+            <ul>
+                <li><strong>Blue Line:</strong> Historical Buildings</li>
+                <li><strong>Turquoise Line:</strong> Present Buildings</li>
+                <li><strong>Green Line:</strong> Future Buildings (including eight 130m towers)</li>
+                <li><strong>Pink Line:</strong> Ways to participate in urban planning processes</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal-improv">
+    <div class="modal-box">
+        <button class="modal-close">×</button>
+        <h2 class="modal-title">Improvisation with Merlin Rainer</h2>
+        <p class="modal-sub">EMIK 2022 Performance</p>
+        <div class="modal-body">
+            <p>A collaborative improvisational performance combining visual art, sound, and live music in real-time dialogue. Merlin Rainer used a mic'd canvas, making brushstrokes audible and live-streaming the painting onto a wall. I responded with piano improvisation drawing from György Ligeti's Études pour piano.</p>
+        </div>
+    </div>
+</div>
+
+<div class="modal" id="modal-theatre">
+    <div class="modal-box">
+        <button class="modal-close">×</button>
+        <h2 class="modal-title">The Silence</h2>
+        <p class="modal-sub">Natalie Sarraute | Directed by Dávid Paška</p>
+        <div class="modal-body">
+            <p>A theatre production exploring the power of silence and what lies beneath conventional conversation. Selected for the Körber Festival Junge Regie in Hamburg (June 2022).</p>
+            <h3>Role</h3>
+            <ul>
+                <li>Participated in every production phase from script to stage design</li>
+                <li>Coordinated rehearsals and managed stage operations</li>
+                <li>Supported artistic direction and conceptual development</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+
+    const pages    = ['about','work','projects','contact'];
+    const bgClass  = ['bg-about','bg-work','bg-projects','bg-contact'];
+
+    let current = 'about';
+
+    const topbar  = document.getElementById('topbar');
+    const sidenav = document.getElementById('sidenav');
+    const counter = document.getElementById('page-counter');
+
+    function goTo(id) {
+        if (!pages.includes(id)) return;
+        document.getElementById('page-' + current)?.classList.remove('active');
+        const next = document.getElementById('page-' + id);
+        if (next) { next.classList.add('active'); next.scrollTop = 0; }
+
+        document.querySelectorAll('[data-page]').forEach(el =>
+            el.classList.toggle('active', el.dataset.page === id)
+        );
+
+        const idx = pages.indexOf(id);
+        const bg  = bgClass[idx];
+        topbar.className  = 'topbar '  + bg;
+        sidenav.className = 'sidenav ' + bg;
+        counter.textContent = (idx + 1) + ' / ' + pages.length;
+        history.replaceState(null, '', '#' + id);
+        current = id;
+    }
+
+    document.querySelectorAll('[data-page]').forEach(el =>
+        el.addEventListener('click', () => goTo(el.dataset.page))
+    );
+
+    // Project modals
+    document.querySelectorAll('[data-modal]').forEach(card => {
+        card.addEventListener('click', () => {
+            document.getElementById(card.dataset.modal)?.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
+        card.setAttribute('tabindex', '0');
+        card.addEventListener('keypress', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.click(); }
+        });
+    });
+
+    document.querySelectorAll('.modal-close').forEach(btn =>
+        btn.addEventListener('click', closeModals)
+    );
+    document.querySelectorAll('.modal').forEach(m =>
+        m.addEventListener('click', e => { if (e.target === m) closeModals(); })
+    );
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { closeModals(); return; }
+        const i = pages.indexOf(current);
+        if ((e.key === 'ArrowRight' || e.key === 'ArrowDown') && i < pages.length - 1) goTo(pages[i + 1]);
+        if ((e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   && i > 0)               goTo(pages[i - 1]);
+    });
+
+    function closeModals() {
+        document.querySelectorAll('.modal.active').forEach(m => m.classList.remove('active'));
+        document.body.style.overflow = '';
+    }
+
+    // Restore from hash
+    const hash = window.location.hash.replace('#', '');
+    goTo(pages.includes(hash) ? hash : 'about');
+
+    // Scroll progress bar
+    document.querySelectorAll('.page').forEach(page =>
+        page.addEventListener('scroll', () => {
+            if (!page.classList.contains('active')) return;
+            const bar = document.getElementById('scroll-progress');
+            if (!bar) return;
+            const max = page.scrollHeight - page.clientHeight;
+            bar.style.width = max > 0 ? (page.scrollTop / max * 100) + '%' : '0';
+        }, { passive: true })
+    );
+
+})();
+</script>
+
 </body>
 </html>
