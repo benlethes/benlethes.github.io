@@ -15,7 +15,7 @@
     --rule-hd: 1px solid #111111;
 
     /* page backgrounds — medium strength pastels */
-    --bg-about:    #D8E0C8;
+    --bg-home:     #D8E0C8;
     --bg-work:     #E5D9BE;
     --bg-projects: #C4CBDF;
     --bg-contact:  #DFC4C8;
@@ -171,7 +171,7 @@ html, body {
     pointer-events: auto;
 }
 
-.page-about    { background-color: var(--bg-about); }
+.page-home     { background-color: var(--bg-home); }
 .page-work     { background-color: var(--bg-work); }
 .page-projects { background-color: var(--bg-projects); }
 .page-writing  { background-color: var(--bg-writing); }
@@ -838,7 +838,7 @@ html, body {
    TOPBAR + SIDENAV BG SYNC
    ======================================== */
 
-.topbar.bg-about,    .sidenav.bg-about    { background-color: var(--bg-about);    }
+.topbar.bg-home,     .sidenav.bg-home     { background-color: var(--bg-home);     }
 .topbar.bg-work,     .sidenav.bg-work     { background-color: var(--bg-work);     }
 .topbar.bg-projects, .sidenav.bg-projects { background-color: var(--bg-projects); }
 .topbar.bg-writing,  .sidenav.bg-writing  { background-color: var(--bg-writing);  }

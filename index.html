@@ -14,8 +14,8 @@
 <div class="shell">
 
     <!-- Top bar -->
-    <header class="topbar bg-about" id="topbar">
-        <span class="topbar-name" data-page="about">Ben Seegatz</span>
+    <header class="topbar bg-home" id="topbar">
+        <span class="topbar-name" data-page="home">Ben Seegatz</span>
         <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
             <div class="cube-wrap">
                 <div class="cube">
@@ -34,7 +34,7 @@
     <main class="pages">
 
         <!-- ABOUT (start page) -->
-        <div class="page page-about active" id="page-about">
+        <div class="page page-home active" id="page-home">
             <div class="about-grid">
                 <div class="about-left">
                     <p class="page-label">About</p>
@@ -369,10 +369,10 @@
     </main>
 
     <!-- Right sidebar nav — 4 items, no Home -->
-    <nav class="sidenav bg-about" id="sidenav">
-        <button class="sidenav-item active" data-page="about">
+    <nav class="sidenav bg-home" id="sidenav">
+        <button class="sidenav-item active" data-page="home">
             <span class="sidenav-num">01</span>
-            <span class="sidenav-label">About</span>
+            <span class="sidenav-label">Home</span>
         </button>
         <button class="sidenav-item" data-page="work">
             <span class="sidenav-num">02</span>
@@ -512,10 +512,10 @@
 <script>
 (function() {
 
-    const pages    = ['about','work','projects','writing','contact'];
-    const bgClass  = ['bg-about','bg-work','bg-projects','bg-writing','bg-contact'];
+    const pages    = ['home','work','projects','writing','contact'];
+    const bgClass  = ['bg-home','bg-work','bg-projects','bg-writing','bg-contact'];
 
-    let current = 'about';
+    let current = 'home';
 
     const topbar   = document.getElementById('topbar');
     const sidenav  = document.getElementById('sidenav');
@@ -558,7 +558,7 @@
         topbar.classList.add(bg);
         sidenav.classList.add(bg);
         counter.textContent = (idx + 1) + ' / ' + pages.length;
-        history.replaceState(null, '', '#' + id);
+        history.replaceState(null, '', id === 'home' ? location.pathname : '#' + id);
         current = id;
         closeMenu();
     }
@@ -601,7 +601,7 @@
 
     // Restore from hash
     const hash = window.location.hash.replace('#', '');
-    goTo(pages.includes(hash) ? hash : 'about');
+    goTo(pages.includes(hash) ? hash : 'home');
 
     // Scroll progress bar
     document.querySelectorAll('.page').forEach(page =>
