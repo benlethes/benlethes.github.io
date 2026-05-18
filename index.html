@@ -16,6 +16,18 @@
     <!-- Top bar -->
     <header class="topbar bg-about" id="topbar">
         <span class="topbar-name" data-page="about">Ben Seegatz</span>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Open navigation" aria-expanded="false">
+            <div class="cube-wrap">
+                <div class="cube">
+                    <div class="cube-face cube-face-front">🐡</div>
+                    <div class="cube-face cube-face-back">×</div>
+                    <div class="cube-face cube-face-right"></div>
+                    <div class="cube-face cube-face-left"></div>
+                    <div class="cube-face cube-face-top"></div>
+                    <div class="cube-face cube-face-bottom"></div>
+                </div>
+            </div>
+        </button>
     </header>
 
     <!-- Pages -->
@@ -43,18 +55,20 @@
                         <div class="detail-row">
                             <p class="detail-row-title">MSc Data Science</p>
                             <p class="detail-row-meta">University of Vienna &mdash; 2024 – Present</p>
-                            <p class="detail-row-desc">Focus: Explainability for AI, Machine Learning, Data Visualization<br>
-                            Thesis: A Lightweight Membership Inference Attack on Approximate Graph Unlearning</p>
+                            <p class="detail-row-desc"><span class="edu-label">Focus</span>(Adversarial) Machine Learning, Explainability for AI, Data Visualization</p>
+                            <p class="detail-row-desc"><span class="edu-label">Thesis</span>A Lightweight Membership Inference Attack on Approximate Graph Unlearning</p>
                         </div>
                         <div class="detail-row">
                             <p class="detail-row-title">BSc Business Informatics</p>
                             <p class="detail-row-meta">WU Vienna &mdash; 2020 – 2024</p>
-                            <p class="detail-row-desc">Thesis: Social Bots and Political Opinion Influence</p>
+                            <p class="detail-row-desc"><span class="edu-label">Focus</span>Data Science, Misinformation, Decision Sciences</p>
+                            <p class="detail-row-desc"><span class="edu-label">Thesis</span>Social Bots and their Influence on Political Opinion</p>
                         </div>
                         <div class="detail-row">
                             <p class="detail-row-title">BA Social &amp; Economic Communication</p>
                             <p class="detail-row-meta">University of Arts Berlin &mdash; 2017 – 2020</p>
-                            <p class="detail-row-desc">Thesis: Exploring different Narratives of the End</p>
+                            <p class="detail-row-desc"><span class="edu-label">Focus</span>Strategic Communication, Communication Design, Urban Planning</p>
+                            <p class="detail-row-desc"><span class="edu-label">Thesis</span>Exploring different Narratives of the End</p>
                         </div>
                     </div>
 
@@ -170,14 +184,13 @@
             <p class="page-label">Selected Projects</p>
             <div class="projects-grid">
 
-                <!-- Project 1: Lenya Gramß collaboration -->
+                <!-- Project 1: Lenya Gramß collaboration — 2023–Present -->
                 <div class="project-card" data-modal="modal-lenya">
                     <div class="project-img">
-                        <!-- Copy uploaded file to images/lenya.jpg in your project -->
-                        <img src="images/lenya.jpg" alt="Music & Theatre collaboration with Lenya Gramß" loading="lazy">
+                        <img src="images/lenya.jpg" alt="Piano & Chanson collaboration with Lenya Gramß" loading="lazy">
                     </div>
                     <span class="project-num">01</span>
-                    <p class="project-title">Music &amp; Theatre</p>
+                    <p class="project-title">Piano &amp; Chanson</p>
                     <p class="project-subtitle">Duo with Lenya Gramß</p>
                     <div class="project-tags">
                         <span class="project-tag">Piano</span>
@@ -186,27 +199,12 @@
                     </div>
                 </div>
 
-                <!-- Project 2: StyleGAN2 -->
-                <div class="project-card" data-modal="modal-stylegan">
-                    <div class="project-img">
-                        <img src="images/styleganPerformance.JPG" alt="StyleGAN2 Music Performance" loading="lazy">
-                    </div>
-                    <span class="project-num">02</span>
-                    <p class="project-title">StyleGAN2 Music Performance</p>
-                    <p class="project-subtitle">EMIK 2022</p>
-                    <div class="project-tags">
-                        <span class="project-tag">Generative AI</span>
-                        <span class="project-tag">Music Performance</span>
-                        <span class="project-tag">TouchDesigner</span>
-                    </div>
-                </div>
-
-                <!-- Project 3: Arbitrary Relevance -->
+                <!-- Project 2: Arbitrary Relevance — Aug 2022 -->
                 <div class="project-card" data-modal="modal-dataviz">
                     <div class="project-img">
                         <img src="images/arbitrary1.jpeg" alt="Arbitrary Relevance" loading="lazy">
                     </div>
-                    <span class="project-num">03</span>
+                    <span class="project-num">02</span>
                     <p class="project-title">Arbitrary Relevance</p>
                     <p class="project-subtitle">LEER Studio Berlin, 2022</p>
                     <div class="project-tags">
@@ -216,27 +214,27 @@
                     </div>
                 </div>
 
-                <!-- Project 4: Rebranding Alexanderplatz -->
-                <div class="project-card" data-modal="modal-alex">
+                <!-- Project 3: StyleGAN2 — EMIK April 2022 -->
+                <div class="project-card" data-modal="modal-stylegan">
                     <div class="project-img">
-                        <img src="images/rebrandingA.jpg" alt="Rebranding Alexanderplatz" loading="lazy">
+                        <img src="images/styleganPerformance.JPG" alt="StyleGAN2 Music Performance" loading="lazy">
                     </div>
-                    <span class="project-num">04</span>
-                    <p class="project-title">Rebranding Alexanderplatz</p>
-                    <p class="project-subtitle">University of Arts Berlin</p>
+                    <span class="project-num">03</span>
+                    <p class="project-title">StyleGAN2 Music Performance</p>
+                    <p class="project-subtitle">EMIK 2022</p>
                     <div class="project-tags">
-                        <span class="project-tag">Public Space</span>
-                        <span class="project-tag">Exhibition Design</span>
-                        <span class="project-tag">Urban Planning</span>
+                        <span class="project-tag">Generative AI</span>
+                        <span class="project-tag">Music Performance</span>
+                        <span class="project-tag">TouchDesigner</span>
                     </div>
                 </div>
 
-                <!-- Project 5: Improvisation -->
+                <!-- Project 4: Improvisation — EMIK April 2022 -->
                 <div class="project-card" data-modal="modal-improv">
                     <div class="project-img">
                         <img src="images/improvisation.JPG" alt="Improvisation Performance" loading="lazy">
                     </div>
-                    <span class="project-num">05</span>
+                    <span class="project-num">04</span>
                     <p class="project-title">Improvisation</p>
                     <p class="project-subtitle">EMIK 2022 w/ Merlin Rainer</p>
                     <div class="project-tags">
@@ -246,18 +244,77 @@
                     </div>
                 </div>
 
-                <!-- Project 6: The Silence -->
+                <!-- Project 5: The Silence — 2021 -->
                 <div class="project-card" data-modal="modal-theatre">
                     <div class="project-img">
                         <img src="images/theatre.jpeg" alt="The Silence" loading="lazy">
                     </div>
-                    <span class="project-num">06</span>
+                    <span class="project-num">05</span>
                     <p class="project-title">The Silence</p>
-                    <p class="project-subtitle">Natalie Sarraute | Dir. Dávid Paška</p>
+                    <p class="project-subtitle">Nathalie Sarraute | Dir. Dávid Paška</p>
                     <div class="project-tags">
                         <span class="project-tag">Theatre</span>
                         <span class="project-tag">Stage Direction</span>
                         <span class="project-tag">Körber Festival</span>
+                    </div>
+                </div>
+
+                <!-- Project 6: Rebranding Alexanderplatz — 2017–2020 -->
+                <div class="project-card" data-modal="modal-alex">
+                    <div class="project-img">
+                        <img src="images/rebrandingA.jpg" alt="Rebranding Alexanderplatz" loading="lazy">
+                    </div>
+                    <span class="project-num">06</span>
+                    <p class="project-title">Rebranding Alexanderplatz</p>
+                    <p class="project-subtitle">University of Arts Berlin</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Public Space</span>
+                        <span class="project-tag">Exhibition Design</span>
+                        <span class="project-tag">Urban Planning</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- WRITING -->
+        <div class="page page-writing" id="page-writing">
+            <p class="page-label">Writing</p>
+            <div class="writing-list">
+
+                <div class="writing-row">
+                    <div class="writing-date">Feb 2026</div>
+                    <div>
+                        <p class="writing-title">What Bowman&rsquo;s Eight Observations Reveal About the Fundamental Challenges of LLM Explainability: Three Hypotheses</p>
+                        <p class="writing-pub">Academic Report &mdash; University of Vienna</p>
+                        <a href="Explainability_for_LLMs_Report.pdf" class="writing-link" target="_blank" rel="noopener">Read PDF</a>
+                    </div>
+                </div>
+
+                <div class="writing-row">
+                    <div class="writing-date">May 2024</div>
+                    <div>
+                        <p class="writing-title">&bdquo;ChatGPT f&uuml;hlt sich wie Junk-Food an&ldquo;</p>
+                        <p class="writing-pub">Essay &mdash; Looping Group</p>
+                        <a href="ChatGPT_JunkFood_LOOPING%20GROUP.pdf" class="writing-link" target="_blank" rel="noopener">Read PDF</a>
+                    </div>
+                </div>
+
+                <div class="writing-row">
+                    <div class="writing-date">Feb 2023</div>
+                    <div>
+                        <p class="writing-title">H&ouml;rt auf, ChatGPT eure Geheimnisse zu verraten!</p>
+                        <p class="writing-pub">Essay &mdash; Looping Group</p>
+                        <a href="Geheimnisse_ChatGPT_LOOPING%20GROUP.pdf" class="writing-link" target="_blank" rel="noopener">Read PDF</a>
+                    </div>
+                </div>
+
+                <div class="writing-row">
+                    <div class="writing-date">Jun 2022</div>
+                    <div>
+                        <p class="writing-title">Das ist nicht das Metaverse (NOCH NICHT.)</p>
+                        <p class="writing-pub">Essay &mdash; Looping Group</p>
+                        <a href="Das%20ist%20nicht%20das%20Metaverse_LOOPING%20GROUP.pdf" class="writing-link" target="_blank" rel="noopener">Read PDF</a>
                     </div>
                 </div>
 
@@ -325,32 +382,18 @@
             <span class="sidenav-num">03</span>
             <span class="sidenav-label">Projects</span>
         </button>
-        <button class="sidenav-item" data-page="contact">
+        <button class="sidenav-item" data-page="writing">
             <span class="sidenav-num">04</span>
+            <span class="sidenav-label">Writing</span>
+        </button>
+        <button class="sidenav-item" data-page="contact">
+            <span class="sidenav-num">05</span>
             <span class="sidenav-label">Contact</span>
         </button>
-        <span class="sidenav-counter" id="page-counter">1 / 4</span>
+        <span class="sidenav-counter" id="page-counter">1 / 5</span>
     </nav>
 
-    <!-- Mobile bottom nav -->
-    <nav class="mobile-nav" id="mobile-nav">
-        <button class="mobile-nav-item active" data-page="about">
-            <span class="mobile-nav-dot"></span>
-            <span class="mobile-nav-label">About</span>
-        </button>
-        <button class="mobile-nav-item" data-page="work">
-            <span class="mobile-nav-dot"></span>
-            <span class="mobile-nav-label">Work</span>
-        </button>
-        <button class="mobile-nav-item" data-page="projects">
-            <span class="mobile-nav-dot"></span>
-            <span class="mobile-nav-label">Projects</span>
-        </button>
-        <button class="mobile-nav-item" data-page="contact">
-            <span class="mobile-nav-dot"></span>
-            <span class="mobile-nav-label">Contact</span>
-        </button>
-    </nav>
+    <div class="menu-backdrop" id="menu-backdrop"></div>
 
 </div>
 
@@ -359,7 +402,7 @@
 <div class="modal" id="modal-lenya">
     <div class="modal-box">
         <button class="modal-close">×</button>
-        <h2 class="modal-title">Music &amp; Theatre — Duo with Lenya Gramß</h2>
+        <h2 class="modal-title">Piano &amp; Chanson — Duo with Lenya Gramß</h2>
         <p class="modal-sub">Piano &amp; Chanson Performance, 2023 – Present</p>
         <div class="modal-body">
             <p>An ongoing artistic collaboration with actress and singer Lenya Gramß, combining chamber music with theotrical performances.</p>
@@ -469,14 +512,34 @@
 <script>
 (function() {
 
-    const pages    = ['about','work','projects','contact'];
-    const bgClass  = ['bg-about','bg-work','bg-projects','bg-contact'];
+    const pages    = ['about','work','projects','writing','contact'];
+    const bgClass  = ['bg-about','bg-work','bg-projects','bg-writing','bg-contact'];
 
     let current = 'about';
 
-    const topbar  = document.getElementById('topbar');
-    const sidenav = document.getElementById('sidenav');
-    const counter = document.getElementById('page-counter');
+    const topbar   = document.getElementById('topbar');
+    const sidenav  = document.getElementById('sidenav');
+    const counter  = document.getElementById('page-counter');
+    const menuBtn  = document.getElementById('menu-toggle');
+    const backdrop = document.getElementById('menu-backdrop');
+
+    function openMenu() {
+        sidenav.classList.add('open');
+        backdrop.classList.add('active');
+        menuBtn.setAttribute('aria-expanded', 'true');
+    }
+
+    function closeMenu() {
+        sidenav.classList.remove('open');
+        backdrop.classList.remove('active');
+        menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    menuBtn.addEventListener('click', () => {
+        sidenav.classList.contains('open') ? closeMenu() : openMenu();
+    });
+
+    backdrop.addEventListener('click', closeMenu);
 
     function goTo(id) {
         if (!pages.includes(id)) return;
@@ -490,11 +553,14 @@
 
         const idx = pages.indexOf(id);
         const bg  = bgClass[idx];
-        topbar.className  = 'topbar '  + bg;
-        sidenav.className = 'sidenav ' + bg;
-        counter.textContent = (idx + 1) + ' / ' + pages.length;
+        // Update bg classes without touching 'open' state
+        bgClass.forEach(c => { topbar.classList.remove(c); sidenav.classList.remove(c); });
+        topbar.classList.add(bg);
+        sidenav.classList.add(bg);
+        counter.textContent = (idx + 1) + ' / ' + pages.length;
         history.replaceState(null, '', '#' + id);
         current = id;
+        closeMenu();
     }
 
     document.querySelectorAll('[data-page]').forEach(el =>
@@ -521,7 +587,8 @@
     );
 
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') { closeModals(); return; }
+        if (e.key === 'Escape') { closeModals(); closeMenu(); return; }
+        if (sidenav.classList.contains('open')) return;
         const i = pages.indexOf(current);
         if ((e.key === 'ArrowRight' || e.key === 'ArrowDown') && i < pages.length - 1) goTo(pages[i + 1]);
         if ((e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   && i > 0)               goTo(pages[i - 1]);
