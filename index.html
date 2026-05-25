@@ -336,7 +336,14 @@
                         <li class="contact-list-item">
                             <span class="contact-list-key">Email</span>
                             <span class="contact-list-val">
-                                <a href="mailto:ben.seegatz@live.de">ben (dot) seegatz (at) live (dot) de</a>
+                                <a id="email-link">ben (dot) seegatz (at) live (dot) de</a>
+                                <script>
+                                    (function() {
+                                        var u = 'ben.seegatz', d = 'live.de';
+                                        var el = document.getElementById('email-link');
+                                        el.href = 'mailto:' + u + '@' + d;
+                                    })();
+                                </script>
                             </span>
                         </li>
                         <li class="contact-list-item">
