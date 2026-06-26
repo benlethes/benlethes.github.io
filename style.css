@@ -489,7 +489,8 @@ html, body {
     background-color: rgba(0,0,0,0.08);
 }
 
-.project-img img {
+.project-img img,
+.project-img video {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -498,7 +499,8 @@ html, body {
     transition: filter 0.4s ease, transform 0.5s ease;
 }
 
-.project-card:hover .project-img img {
+.project-card:hover .project-img img,
+.project-card:hover .project-img video {
     filter: grayscale(0%);
     transform: scale(1.025);
 }
@@ -901,3 +903,19 @@ html, body {
 }
 
 .modal-body a:hover { opacity: 0.65; }
+
+.modal-img {
+    width: 100%;
+    display: block;
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+}
+
+.modal-imgs {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.modal-imgs .modal-img { margin-bottom: 0; }
