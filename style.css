@@ -416,6 +416,7 @@ html, body {
 
 /* Only borders at the very top and between rows, no bottom noise */
 .work-row + .work-row { border-top: var(--rule); }
+.work-row--no-separator { border-top: none !important; }
 .work-list > .work-row:first-child { border-top: var(--rule); }
 .work-list > .work-row:last-child  { border-bottom: var(--rule); }
 
