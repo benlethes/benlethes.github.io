@@ -365,23 +365,7 @@
                         <li class="contact-list-item">
                             <span class="contact-list-key">Email</span>
                             <span class="contact-list-val">
-                                <a id="email-link" href="#" style="cursor:pointer;"></a>
-                                <script>
-                                    (function() {
-                                        var c=[98,101,110,46,115,101,101,103,97,116,122,64,108,105,118,101,46,100,101];
-                                        var e=c.map(function(n){return String.fromCharCode(n);}).join('');
-                                        var el=document.getElementById('email-link');
-                                        el.textContent='ben (dot) seegatz (at) live (dot) de';
-                                        el.addEventListener('click',function(ev){
-                                            ev.preventDefault();
-                                            navigator.clipboard.writeText(e).then(function(){
-                                                var prev=el.textContent;
-                                                el.textContent='copied!';
-                                                setTimeout(function(){el.textContent=prev;},1800);
-                                            });
-                                        });
-                                    })();
-                                </script>
+                                <a class="email-reveal" href="#">show address</a>
                             </span>
                         </li>
                         <li class="contact-list-item">
@@ -436,7 +420,10 @@
             <span class="sidenav-num">05</span>
             <span class="sidenav-label">Contact</span>
         </button>
-        <span class="sidenav-counter" id="page-counter">1 / 5</span>
+        <div class="sidenav-footer">
+            <span class="sidenav-counter" id="page-counter">1 / 5</span>
+            <button class="sidenav-imprint" data-modal="modal-imprint">Imprint &amp; Privacy</button>
+        </div>
     </nav>
 
     <div class="menu-backdrop" id="menu-backdrop"></div>
@@ -444,6 +431,33 @@
 </div>
 
 <!-- MODALS -->
+
+<div class="modal" id="modal-imprint">
+    <div class="modal-box">
+        <button class="modal-close">×</button>
+        <h2 class="modal-title">Imprint &amp; Privacy</h2>
+        <p class="modal-sub">Impressum &middot; Offenlegung gemäß § 25 MedienG &middot; Datenschutz</p>
+        <div class="modal-body">
+            <h3>Media Owner</h3>
+            <p>Ben Seegatz<br>Vienna, Austria</p>
+            <h3>Contact</h3>
+            <p>Email: <a class="email-reveal" href="#">show address</a></p>
+            <h3>Purpose</h3>
+            <p>Personal website presenting my professional background, projects, and writing. No commercial services are offered.</p>
+
+            <h3>Privacy Policy</h3>
+            <p>The controller under the GDPR is Ben Seegatz (contact above). This website does not use cookies, analytics, tracking, or embedded third-party content. Fonts, images, and videos are served from this website itself.</p>
+            <h3>Hosting</h3>
+            <p>This website is hosted on GitHub Pages, operated by GitHub, Inc. (USA). When you visit it, GitHub processes technical data such as your IP address, browser type, and time of access in server logs to deliver the website and keep it secure. This is based on a legitimate interest (Art. 6(1)(f) GDPR). GitHub is certified under the EU-US Data Privacy Framework. See the <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">GitHub Privacy Statement</a>.</p>
+            <h3>Contact by Email</h3>
+            <p>If you email me, I use your address and message only to reply and do not share them with third parties.</p>
+            <h3>External Links</h3>
+            <p>Links to other websites (e.g. LinkedIn, YouTube) only transfer data to those providers once you click them. Their own privacy policies apply.</p>
+            <h3>Your Rights</h3>
+            <p>You have the right to access, rectification, erasure, restriction of processing, data portability, and objection. You may also lodge a complaint with the Austrian Data Protection Authority (<a href="https://www.dsb.gv.at" target="_blank" rel="noopener">dsb.gv.at</a>).</p>
+        </div>
+    </div>
+</div>
 
 <div class="modal" id="modal-soundviz">
     <div class="modal-box">
@@ -678,6 +692,20 @@
         document.querySelectorAll('.modal.active').forEach(m => m.classList.remove('active'));
         document.body.style.overflow = '';
     }
+
+    // Email: never present in the source, assembled only on click (anti-scraping)
+    const emailCodes = [98,101,110,46,115,101,101,103,97,116,122,64,108,105,118,101,46,100,101];
+    document.querySelectorAll('.email-reveal').forEach(el =>
+        el.addEventListener('click', e => {
+            e.preventDefault();
+            const address = String.fromCharCode(...emailCodes);
+            el.textContent = address;
+            navigator.clipboard?.writeText(address).then(() => {
+                el.textContent = 'copied!';
+                setTimeout(() => { el.textContent = address; }, 1800);
+            }).catch(() => {});
+        })
+    );
 
     // Restore from hash
     const hash = window.location.hash.replace('#', '');
